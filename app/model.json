@@ -85,6 +85,80 @@
                         "required": true
                     },
                     {
+                        "id":   "friend",
+                        "type": "autocomplete",
+                        "name": "Friend",
+                        "url": "/friend",
+                        "form": "FriendForm",
+                        "width": 2
+                    },
+                    {
+                        "id":   "activity",
+                        "type": "autocomplete",
+                        "name": "Activity",
+                        "url": "/activity",
+                        "defaultKey": "activityKey",
+                        "readonly": true,
+                        "form": "AddActivityForm",
+                        "width": 2
+                    },                    
+                    {
+                        "id": "comment",
+                        "type": "text",
+                        "name": "Comments",
+                        "width": 2,
+                        "height": 4,
+                        "maxLength": 5000
+                    },
+                    {
+                        "type": "deleteButton",
+                        "name": "Delete"
+                    },
+                    {
+                        "type": "cancelButton",
+                        "name": "Cancel"
+                    },
+                    {
+                        "type": "okButton",
+                        "name": "Ok"
+                    }
+                ]
+            },
+            {
+                "id": "GroupForm",
+                "title": "Group",
+                "url": "/group",
+                "formFieldList": [
+                    {
+                        "id": "name",
+                        "type": "text",
+                        "name": "GroupName",
+                        "width": 2,
+                        "required": true
+                    },
+                    {
+                        "id":   "friend",
+                        "type": "autocomplete",
+                        "name": "Friend",
+                        "url": "/friend",
+                        "form": "GroupForm",
+                        "width": 2
+                    },
+                    {
+                        "id": "creationdate",
+                        "type": "date",
+                        "name": "Creation Date",
+                        "width": 2
+                    },
+                    {
+                        "id": "comment",
+                        "type": "text",
+                        "name": "Comments",
+                        "width": 2,
+                        "height": 4,
+                        "maxLength": 5000
+                    },
+                    {
                         "type": "deleteButton",
                         "name": "Delete"
                     },
@@ -113,31 +187,27 @@
                         "form": "ActivityForm",
                         "width": 2
                     },
-                    {
-                        "type": "deleteButton",
-                        "name": "Delete"
+                                        {
+                        "id":   "location",
+                        "type": "autocomplete",
+                        "name": "Location",
+                        "url": "/location",
+                        "form": "LocationForm",
+                        "width": 2
                     },
                     {
-                        "type": "cancelButton",
-                        "name": "Cancel"
+                        "id": "activitydate",
+                        "type": "date",
+                        "name": "Date",
+                        "width": 2
                     },
                     {
-                        "type": "okButton",
-                        "name": "Ok"
-                    }
-                ]
-            },
-            {
-                "id": "GroupForm",
-                "title": "Group",
-                "url": "/group",
-                "formFieldList": [
-                    {
-                        "id": "name",
+                        "id": "comment",
                         "type": "text",
-                        "name": "GroupName",
+                        "name": "Comments",
                         "width": 2,
-                        "required": true
+                        "height": 4,
+                        "maxLength": 5000
                     },
                     {
                         "type": "deleteButton",
@@ -179,6 +249,13 @@
                         "icon": "fa-weixin",
                         "color": "wisteria",
                         "page": "groupspage"
+                    },
+                    {
+                        "type": "button",
+                        "name": "Activities",
+                        "icon": "fa-weixin",
+                        "color": "red",
+                        "page": "activitiespage"
                     }
 
                 ]
@@ -264,8 +341,35 @@
                             }
                     }
                 ]
+            },
+            {
+                "id": "activitiespage",
+                "elementList": [
+                    {
+                        "type": "backbutton"
+                    },
+                    {
+                        "type": "newButton",
+                        "name": "NewActivity",
+                        "icon": "fa-home",
+                        "color": "red",
+                        "width": 2,
+                        "form": {
+                            "form": "AddActivityForm"
+                        }
+                    },
+                    {
+                        "type": "list",
+                        "icon": "fa-home",
+                        "color": "red",
+                        "search": true,
+                        "url": "/activity",
+                        "form": {
+                            "form": "AddActivityForm"
+                        }
+                    }
+                ]
             }
-
         ]
     }
 }

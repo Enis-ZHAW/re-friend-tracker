@@ -187,12 +187,20 @@
                         "form": "ActivityForm",
                         "width": 2
                     },
-                                        {
+                    {
                         "id":   "location",
                         "type": "autocomplete",
                         "name": "Location",
                         "url": "/location",
                         "form": "LocationForm",
+                        "width": 2
+                    },
+                    {
+                        "id":   "friend",
+                        "type": "autocomplete",
+                        "name": "Friend",
+                        "url": "/friend",
+                        "form": "FriendForm",
                         "width": 2
                     },
                     {
@@ -253,7 +261,7 @@
                     {
                         "type": "button",
                         "name": "Activities",
-                        "icon": "fa-weixin",
+                        "icon": "fa-home",
                         "color": "red",
                         "page": "activitiespage"
                     }
@@ -303,7 +311,7 @@
                     {
                         "type": "newButton",
                         "name": "Add Activity",
-                        "icon": "fa-calender",
+                        "icon": "fa-home",
                         "color": "green",
                         "form": {
                             "form": "AddActivityForm"
